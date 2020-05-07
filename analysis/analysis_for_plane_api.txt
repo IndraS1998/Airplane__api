@@ -1,0 +1,22 @@
+SYSTEM ALNALYSIS
+
+1-SYSTEM REQUIREMENTS
+
+*Monitoring of flights (for each flight,)
+
+
+		a-set departure time,
+		b-live feed of(update after every hour) arrival time,
+		c-status (in flight, landed etc),
+		d-current speed (live feed, eg every 20mins),
+		e-total seat numbers
+		f-distance travelled,
+		g-distance left from destination,
+		h-display all stops or checkpoints and thier airports,
+		i-live feed of current position,
+		j-display departure airport,
+		k-display arrival airport,
+		l-(if planeHasLeft) display actual departure time,
+		m-(if planeHasArrived) display actual arrival time,
+		n-highlight all flights i want to monitor,
+		o-live update of all monitored flights		
