@@ -5,7 +5,19 @@ let Router = express.Router();
 let workerController = require("../controllers/workerController");
 let {createUser,login} = workerController;
 
-Router.post("/createUser",createUser);
-Router.post("/login",login);
+Router.post("/createUser",[
+    check('name').notEmpty().isString(),
+    check('email').notEmpty().isString(),
+    check('sex').notEmpty().isString(),
+    check('department').notEmpty().isString(),
+    check('password').notEmpty().isString(),
+    check('address').notEmpty().isString(),
+    check('phone_Number').notEmpty().isNumeric()
+],createUser);
+
+Router.post("/login",[
+    check('name').notEmpty().isString(),
+    check('email').notEmpty().isString()
+],login);
 
 module.exports = Router;

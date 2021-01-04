@@ -2,6 +2,7 @@
   <dictionary name="RANDY">
     <words>
       <w>bcrypt</w>
+      <w>flightapi</w>
     </words>
   </dictionary>
 </component>

@@ -1,0 +1,31 @@
+Flight Schema
+
+Departure date/time
+Arrival date and time
+Price
+Category
+Booked
+Creator name
+Date created
+Creator id
+Flight / plane name
+Plane airport
+
+Administrator Schema
+
+Name
+Email address
+Sex
+Password
+Phone number
+Address
+
+Worker Schema
+
+Name
+Email address
+Sex
+Department
+Password
+Phone Number
+Address
