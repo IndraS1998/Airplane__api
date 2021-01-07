@@ -24,6 +24,5 @@ Router.delete("/del-flight",deleteFlightSpace);
 Router.patch("/update-flight",updateFlightSpace);
 
 Router.get("/",getAllFlights);
-Router.get("/booked",getBookedFlights);
 
 module.exports = Router;
