@@ -17,7 +17,7 @@ Router.post("/createUser",[
 
 Router.post("/login",[
     check('name').notEmpty().isString(),
-    check('email').notEmpty().isString()
+    check('password').notEmpty().isString()
 ],login);
 
 module.exports = Router;
