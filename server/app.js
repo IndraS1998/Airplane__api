@@ -6,6 +6,7 @@ let HttpError = require('./src/models/httpError');
 let flightRoute = require("./src/routes/flightRoute");
 let adminRoute = require("./src/routes/adminRoute");
 let workerRoute = require("./src/routes/workerRoute");
+let operationRoute = require("./src/routes/OperationRoutes");
 
 let app = express();
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 app.use("/flights",flightRoute);
 app.use("/admin",adminRoute);
 app.use("/worker",workerRoute);
+app.use("/operations",operationRoute);
 
 /*
 *               ERROR HANDLING
