@@ -1,11 +1,11 @@
 let express = require("express");
 let {check} = require("express-validator");
-let Router = express.Router();
+let router = express.Router();
 
 let adminController = require("../controllers/adminController");
 let {createAdmin,authenticate} = adminController;
 
-Router.post("/createAdmin",[
+router.post("/createAdmin",[
     check('name').notEmpty().isString(),
     check('email').notEmpty().isString(),
     check('sex').notEmpty().isString(),
@@ -14,9 +14,9 @@ Router.post("/createAdmin",[
     check('phone_Number').notEmpty().isNumeric()
 ],createAdmin);
 
-Router.post("/authenticate",[
+router.post("/authenticate",[
     check('name').notEmpty().isString(),
     check('password').notEmpty().isString()
 ],authenticate);
 
-module.exports = Router;
+module.exports = router;

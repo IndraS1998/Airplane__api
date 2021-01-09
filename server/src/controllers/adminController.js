@@ -80,9 +80,11 @@ let createAdmin = async (req,res,next) =>{
     try{
         await newAdmin.save();
     }catch (e) {
-        return next(new HttpError('system error somthing went wrong',401));
+        return next(new HttpError('system error something went wrong',401));
     }
+    console.log('done');
     await res.json({message : 'success'}).status(200);
+
 };
 
 exports.authenticate = authenticate;

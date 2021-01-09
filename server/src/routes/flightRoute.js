@@ -1,11 +1,11 @@
 let express = require("express");
 let {check} = require("express-validator");
-let Router = express.Router();
+let router = express.Router();
 
 let flightController = require("../controllers/flightController");
-let {createFlightSpace,deleteFlightSpace,updateFlightSpace,getAllFlights,getBookedFlights} = flightController;
+let {createFlightSpace,deleteFlightSpace,updateFlightSpace,getAllFlights} = flightController;
 
-Router.post("/new-flight",[
+router.post("/new-flight",[
     check('departure').isDate().notEmpty(),
     check('arrival').isDate().notEmpty(),
     check('price').isNumeric().notEmpty(),
@@ -19,10 +19,10 @@ Router.post("/new-flight",[
     check('ctd_date').notEmpty().isDate()
 ],createFlightSpace);
 
-Router.delete("/del-flight",deleteFlightSpace);
+router.delete("/del-flight",deleteFlightSpace);
 
-Router.patch("/update-flight",updateFlightSpace);
+router.patch("/update-flight",updateFlightSpace);
 
-Router.get("/",getAllFlights);
+router.get("/",getAllFlights);
 
-module.exports = Router;
+module.exports = router;

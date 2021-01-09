@@ -2,6 +2,7 @@ let express = require("express");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 
+let HttpError = require('./src/models/httpError');
 let flightRoute = require("./src/routes/flightRoute");
 let adminRoute = require("./src/routes/adminRoute");
 let workerRoute = require("./src/routes/workerRoute");
@@ -30,12 +31,8 @@ app.use("/worker",workerRoute);
 /*
 *               ERROR HANDLING
 * */
-app.use((error,req,res,next)=>{
-    if(res.headersSent){
-        return next(error);
-    }
-    res.status(500);
-    res.json({message : error.message || "an unknown error occurred"})
+app.use((req,res,next)=>{
+    return next(new HttpError('wrong route entered',401));
 });
 
 /*
