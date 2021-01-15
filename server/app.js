@@ -41,7 +41,7 @@ app.use((req,res,next)=>{
 *            %%%   CONNECTION LOGIC   %%%
 * */
 
-mongoose.connect('mongodb+srv://Randy:beauty@cluster0.q6xbz.mongodb.net/flightapi?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://randy:beauty@cluster0.yd9ey.mongodb.net/Flightapi?retryWrites=true&w=majority')
     .then(()=>{
         app.listen(5000,()=>{console.log('app running on port 5000')});
     })

@@ -11,4 +11,4 @@ let workerSchema = new Schema({
     address : {type : String,required:true}
 });
 
-module.exports = mongoose.model("WorkerSchema",workerSchema);
+module.exports = mongoose.model("Workers",workerSchema);

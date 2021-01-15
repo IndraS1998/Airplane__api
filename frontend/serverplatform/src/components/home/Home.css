@@ -1,0 +1,99 @@
+.homeCenter{
+    flex: 1;
+    height: max-content;
+}
+
+.titleText{
+    color: var(--secondaryGrey);
+    font-size: 2.5rem;
+}
+
+input{
+    border-color: var(--mainGrey);
+    margin: 0.4rem;
+    border-width: 0.2rem;
+    border-radius: 7px;
+}
+
+input:focus{
+    border-color: var(--lightGreen);
+    border-width: 0.2rem;
+}
+
+span{
+    color: var(--mainGreen);
+}
+.textSmall{
+    color: var(--mainGreen);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.textSample{
+    color: var(--sucessGrey);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.mx-3{
+    margin: 0 0.3rem;
+}
+
+.cart{
+    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    min-height: 15rem;
+    width: 16rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.cart:hover{
+    background-color: var(--mainGreen);
+    cursor: pointer;
+    transition:all 1s linear;
+    color: white;
+}
+.cartTitle{
+    font-size: 1.2rem;
+}
+.cartSetting{
+    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    min-height: 15rem;
+    width: 16rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.cartSetting:hover{
+    background-color: var(--lightRed);
+    cursor: pointer;
+    transition:all 1s linear;
+    color: white;
+}
+
+.py-1{
+    padding: 0 0.1rem;
+}
+
+.cartOut{
+    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    min-height: 15rem;
+    min-width: 15rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+.cartOut:hover{
+    background-color: var(--mainRed);
+    cursor: pointer;
+    transition:all 1s linear;
+    color: white;
+}
+
+.py-5{
+    padding: 0.5rem 0;
+}
+.cartContainer{
+    margin: 1rem;
+}

@@ -5,7 +5,7 @@ let router = express.Router();
 let workerController = require("../controllers/workerController");
 let {createUser,login} = workerController;
 
-router.post("/createUser",[
+router.post("/create",[
     check('name').notEmpty().isString(),
     check('email').notEmpty().isString(),
     check('sex').notEmpty().isString(),

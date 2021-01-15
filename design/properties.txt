@@ -1,15 +1,15 @@
 Flight Schema
 
-Departure date/time
-Arrival date and time
-Price
-Category
-Booked
-Creator name
+Departure date/time t
+Arrival date and time t
+Price f
+Category f
+Booked f
+Creator name w
 Date created
-Creator id
-Flight / plane name
-Plane airport
+Creator id w
+Flight / plane name f
+Plane airport f
 
 Administrator Schema
 
@@ -29,3 +29,8 @@ Department
 Password
 Phone Number
 Address
+
+AIRPORT SCHEMA
+name,
+address,
+id

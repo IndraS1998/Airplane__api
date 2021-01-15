@@ -1,0 +1,84 @@
+.heading{
+    color: var(--mainGreen);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.creationSection{
+    border: 0.1rem solid var(--mainGreen);
+    border-radius: 8px;
+    padding : 1rem;
+    margin : 1rem;
+    min-height: 21rem;
+    min-width: 22rem;
+}
+
+.creationSection:hover{
+    background-color: var(--mainGrey);
+    transition: all 1s linear;
+}
+label{
+    text-transform: capitalize;
+    color: var(--mainBlue);
+}
+
+.creationSection label{
+    color: var(--mainBlue);
+}
+
+input{
+    border-color: var(--mainGreen);
+    margin: 0.4rem 0.6rem;
+    cursor: pointer;
+    border-width: 0.2rem;
+    border-radius: 7px;
+}
+
+input:focus{
+    border-color: var(--lightGreen);
+    border-width: 0.2rem;
+}
+
+.box{
+    margin: 0.5rem;
+}
+
+.box select {
+    background-color: var(--mainGreen);
+    color: white;
+    padding: 0.5rem;
+    width: 12rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    outline: none;
+}
+.box select{
+    cursor: pointer;
+}
+
+.box::before {
+    content: "\f13a";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+    padding: 30px;
+}

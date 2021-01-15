@@ -84,7 +84,6 @@ let createAdmin = async (req,res,next) =>{
     }
     console.log('done');
     await res.json({message : 'success'}).status(200);
-
 };
 
 exports.authenticate = authenticate;

@@ -5,7 +5,7 @@ let router = express.Router();
 let adminController = require("../controllers/adminController");
 let {createAdmin,authenticate} = adminController;
 
-router.post("/createAdmin",[
+router.post("/create",[
     check('name').notEmpty().isString(),
     check('email').notEmpty().isString(),
     check('sex').notEmpty().isString(),
