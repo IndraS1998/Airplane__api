@@ -1,18 +1,22 @@
 import React,{createContext,useState} from "react";
 
-import {flights} from "./core";
+import {flights,users} from "./core";
 import {onLogin,onSetString} from "./core/authentication";
-import {users} from "./core";
 
 let flightContext = createContext([...flights]);
 let {Provider} = flightContext;
 
 const FlightReducer = ({children}) =>{
-    const [logged,setLogged] = useState(false);
+    const [logged,setLogged] = useState(true);
     const [loading,setLoading] = useState(false);
+    const [modalOpen,setModalOpen] = useState(false);
+    const [modalTrigger,setModalTrigger] = useState("");
+    const [message,setMessage] = useState("");
+    const [modalFlight,setModalFlight] = useState(null);
+
     const [workers,setWorkers] = useState([...users]);
     const [flightsSpaces,setFlightSpaces] = useState([...flights]);
-    const [activeWorker,setActiveWorker] = useState(null);
+    const [activeWorker,setActiveWorker] = useState(users[1]);
     const [name,setName] = useState("");
     const [password,setPassword] = useState("");
 
@@ -31,8 +35,9 @@ const FlightReducer = ({children}) =>{
 
     return(
         <Provider value={{
-            logged,loading,name,setName,password,setPassword,activeWorker,setLoading,flightsSpaces,setFlightSpaces,
-            onSetString,onPerformLogin,onLogOut,
+            logged,loading,name,setName,password, setPassword,modalOpen,message,modalFlight,
+            activeWorker,setLoading,flightsSpaces,setFlightSpaces,modalTrigger,setModalFlight,
+            onSetString,onPerformLogin,onLogOut,setModalOpen,setModalTrigger,setMessage
         }}>
             {children}
         </Provider>

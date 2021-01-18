@@ -2,14 +2,16 @@ Flight Schema
 
 Departure date/time t
 Arrival date and time t
-Price f
+Price f (e)
 Category f
-Booked f
+Booked f (eu)
 Creator name w
 Date created
 Creator id w
 Flight / plane name f
 Plane airport f
+destination
+seat number
 
 Administrator Schema
 

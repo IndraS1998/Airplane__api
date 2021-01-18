@@ -21,12 +21,12 @@ const WorkSection = ({onLogOut}) =>{
             <Link to="flightList" style={{textDecoration: 'none'}}>
                 <div className="cart column">
                     <p className="py-5 cartTitle">VIEW FLIGHTS</p>
-                    <p className="textSample mx-3 py-5">view all flights and select what perform operations on them</p>
+                    <p className="textSample mx-3 py-5">view all flights and perform operations </p>
                     <BiAlignLeft size={32}/>
                 </div>
             </Link>
             <Link to="settings" style={{textDecoration: 'none'}}>
-                <div className="cartSetting column">
+                <div className="cart column">
                     <p className="py-5 cartTitle">MY SETTINGS</p>
                     <p className="textSample mx-3 py-5">take a look at your user credential settings</p>
                     <AiFillSetting size={32}/>

@@ -8,27 +8,9 @@
     font-size: 2.5rem;
 }
 
-input{
-    border-color: var(--mainGrey);
-    margin: 0.4rem;
-    border-width: 0.2rem;
-    border-radius: 7px;
-}
-
-input:focus{
-    border-color: var(--lightGreen);
-    border-width: 0.2rem;
-}
-
 span{
     color: var(--mainGreen);
 }
-.textSmall{
-    color: var(--mainGreen);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
 .textSample{
     color: var(--sucessGrey);
     font-size: 1rem;

@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {flightContext} from "../../store/reducer";
 import "./Navigation.css"
 import {CgLogIn} from "react-icons/cg";
+import {IoIosLogOut} from "react-icons/io";
 
 const Navigation = () =>{
     let data = useContext(flightContext);
@@ -31,7 +32,7 @@ const Navigation = () =>{
                 </Link>
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <div className="navigationLogOut" onClick={data.onLogOut}>
-                        <CgLogIn size={15}/>
+                        <IoIosLogOut size={20}/>
                     </div>
                 </Link>
             </div>

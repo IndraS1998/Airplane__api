@@ -1,0 +1,89 @@
+.modal{
+    background: rgba(0, 0, 0, 0.43);
+    height: 100vh;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.detailModal{
+    padding: 0 3rem;
+    min-width: 20rem;
+    min-height: 30rem;
+    border-radius: 7px;
+    border: 0.1rem solid var(--mainGreen);
+    background: white;
+}
+.containDate{
+    padding: 0 3rem;
+}
+.spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titleMain{
+    color:var(--mainGreen);
+    font-size: 3rem;
+}
+.dateEmphasis{
+    color: var(--secondaryGreen);
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: black;
+    padding: 0 1rem;
+}
+.dateEmphasisRed{
+    color: var(--secondaryRed);
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: black;
+    padding: 0 1rem;
+}
+.date{
+    color: var(--secondaryGrey);
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: black;
+}
+.textSection{
+    min-width: 20rem;
+    min-height: 25rem;
+    border-radius: 7px;
+    border: 0.1rem solid var(--mainGreen);
+    background: white;
+}
+.deleteSection{
+    width: 20rem;
+    height: 25rem;
+    border-radius: 7px;
+    border: 0.1rem solid var(--mainRed);
+    background: white;
+}
+.modalText{
+    color: var(--darkGreen);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+.deleteTitleModal{
+    color: var(--darkRed);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    text-align: center;
+}
+.deleteText{
+    color: var(--secondaryGrey);
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+.deleteTextInfo{
+    color: var(--secondaryRed);
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    text-align: center;
+}

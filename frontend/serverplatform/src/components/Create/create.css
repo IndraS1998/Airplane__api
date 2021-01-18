@@ -4,6 +4,10 @@
     text-transform: capitalize;
 }
 
+.sectionContainer{
+
+}
+
 .creationSection{
     border: 0.1rem solid var(--mainGreen);
     border-radius: 8px;
@@ -34,11 +38,6 @@ input{
     border-radius: 7px;
 }
 
-input:focus{
-    border-color: var(--lightGreen);
-    border-width: 0.2rem;
-}
-
 .box{
     margin: 0.5rem;
 }
@@ -54,8 +53,6 @@ input:focus{
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     -webkit-appearance: button;
     outline: none;
-}
-.box select{
     cursor: pointer;
 }
 

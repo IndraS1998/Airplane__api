@@ -1,14 +1,16 @@
   :root{
       --mainGreen : #00BFA0;
-      --lightGreen : rgba(110, 254, 123, 0.89);
+      --secondaryGreen : #00e3c4;
+      --darkGreen : #00b08e;
       --mainWhite : rgba(255, 255, 255, 0);
       --mainDark  : #232528;
       --mainBlue : #4425ba;
       --mainGrey  : rgba(241, 241, 241, 0.38);
       --secondaryGrey : rgba(0, 0, 0, 0.57);
       --sucessGrey : rgba(103, 103, 103, 0.57);
-      --mainRed : #ff1e4d;
-      --lightRed : #d3f336;
+      --mainRed : #eb1b3b;
+      --secondaryRed : #e91e4b;
+      --darkRed : #d41d3f;
   }
 
   body{
@@ -28,11 +30,13 @@
   }
   .loginHead:hover{
       color: var(--secondaryGrey);
+      transition: all 1s linear;
   }
   .center{
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
   }
 
   .column{
@@ -41,27 +45,102 @@
       align-items: center;
       flex-direction: column;
   }
-
-  .height100{
-      height: 85vh;
+  .columnStart{
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      flex-direction: column;
   }
 
+  .height100{
+      min-height: 85vh;
+  }
+
+  .textSmall{
+      color: var(--mainGreen);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+  }
+
+  .textSmallGrey{
+      color: var(--secondaryGrey);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+  }
   .btnMain{
       text-align: center;
       border-radius: 7px;
       color: white;
-      border: var(--mainGreen) 0.1rem solid;
+      border: var(--darkGreen) 0.1rem solid;
       background: var(--mainGreen);
       padding: 0.6rem;
       margin: 1rem;
       text-transform: uppercase;
   }
-
-  .btnMain:hover{
-      background-color: white;
-      color: var(--mainGreen);
+  .btnDanger{
+      text-align: center;
+      border-radius: 7px;
+      color: white;
+      border: var(--darkRed) 0.1rem solid;
+      background: var(--mainRed);
+      padding: 0.6rem;
+      margin: 1rem;
+      text-transform: uppercase;
+  }
+  .btnDanger:hover{
+      background-color: var(--darkRed);
       cursor: pointer;
       transition:all 1s linear;
+  }
+  .darkBtnEmpty{
+      text-align: center;
+      border-radius: 7px;
+      color: var(--mainRed);
+      border: var(--mainRed) 0.1rem solid;
+      background: white;
+      padding: 0.6rem;
+      margin: 1rem;
+      text-transform: uppercase;
+  }
+
+  .darkBtnEmpty:hover{
+      cursor: pointer;
+      background-color: var(--mainRed);
+      color: white;
+      transition:all 0.3s linear;
+  }
+  .btnMain:hover{
+      background-color: var(--darkGreen);
+      cursor: pointer;
+      transition:all 1s linear;
+  }
+  .btnInnerEmpty{
+      text-align: center;
+      border-radius: 7px;
+      color: var(--mainGreen);
+      border: var(--mainGreen) 0.1rem solid;
+      background: white;
+      padding: 0.6rem;
+      margin: 1rem;
+      text-transform: uppercase;
+  }
+  .btnInnerEmpty:hover{
+      cursor: pointer;
+      background-color: var(--mainGreen);
+      color: white;
+      transition:all 0.3s linear;
+  }
+
+  input{
+      border-color: var(--mainGrey);
+      margin: 0.4rem;
+      border-width: 0.2rem;
+      border-radius: 7px;
+  }
+
+  input:focus{
+      border-color: var(--secondaryGrey);
+      border-width: 0.2rem;
   }
 
   .animate {

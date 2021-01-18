@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch,Route} from "react-router-dom";
-import './App.css'
+import './App.css';
 
 //imports
 import Home from "./components/home/Home";
@@ -9,6 +9,7 @@ import LoadingSpinner from "./components/loading/LoadingSpinner";
 import FlightList from "./components/Viewing/FlightList";
 import Settings from "./components/settings/Settings";
 import Navigation from "./components/navigation/Navigation";
+import Modal from "./components/loading/Modal";
 
 function App(){
   return(
@@ -20,6 +21,7 @@ function App(){
               <Route path="/flightList" component={FlightList}/>
               <Route path="/settings" component={Settings}/>
           </Switch>
+          <Modal/>
         <LoadingSpinner />
       </div>
   )

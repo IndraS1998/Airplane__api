@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 1.5rem;
-    border-bottom: solid 0.1rem var(--mainGreen);
+    border-bottom: solid 0.2rem var(--mainGreen);
 }
 
 .navigationHeader{
@@ -21,17 +21,17 @@
     margin: 1rem;
     cursor: pointer;
     background-color: var(--mainWhite);
-    color: var(--mainGreen);
+    color: var(--mainRed);
     text-transform: uppercase;
     text-align: center;
 }
 .navigationLogOut:hover{
-    color: var(--mainRed);
+    color: var(--darkRed);
     transition: all 1s linear;
 }
 .navigationItem{
     padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 1rem;
     cursor: pointer;
     background-color: var(--mainWhite);
@@ -40,7 +40,7 @@
     text-align: center;
 }
 .navigationItem:hover{
-    color: var(--lightRed);
+    color: var(--secondaryGrey);
     transition: all 1s linear;
 }
 
