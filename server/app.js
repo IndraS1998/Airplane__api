@@ -41,8 +41,15 @@ app.use((req,res,next)=>{
 *            %%%   CONNECTION LOGIC   %%%
 * */
 
-mongoose.connect('mongodb+srv://randy:beauty@cluster0.yd9ey.mongodb.net/Flightapi?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://randy:maeva2020@cluster0.rqptd.mongodb.net/FlightManager?retryWrites=true&w=majority')
     .then(()=>{
         app.listen(5000,()=>{console.log('app running on port 5000')});
     })
     .catch(err => console.log(err));
+
+/*
+* 'mongodb+srv://Randy:beauty@cluster0.q6xbz.mongodb.net/FlightManager?retryWrites=true&w=majority'
+* mongodb+srv://randy:beauty@clusterfortutorial.qsh92.mongodb.net/FlightManager?retryWrites=true&w=majority
+* mongodb+srv://randy:randypassword@cluster0.gv8oz.mongodb.net/<dbname>?retryWrites=true&w=majority
+* mongodb+srv://randy:maeva2020@cluster0.rqptd.mongodb.net/FlightManager?retryWrites=true&w=majority
+* */

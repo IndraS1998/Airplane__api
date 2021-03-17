@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+:root{
+  --mainGreen : #00BFA0;
+  --secondaryGreen : #00e3c4;
+  --darkGreen : #00b08e;
+  --mainWhite : rgba(255, 255, 255, 0);
+  --mainDark  : #232528;
+  --mainBlue : #4425ba;
+  --mainGrey  : rgba(241, 241, 241, 0.38);
+  --secondaryGrey : rgba(0, 0, 0, 0.57);
+  --sucessGrey : rgba(103, 103, 103, 0.57);
+  --mainRed : #eb1b3b;
+  --secondaryRed : #e91e4b;
+  --darkRed : #d41d3f;
+}
+
+.buttonSuccessPrimary{
+  border-radius: 7px;
+  border: solid 0.3rem var(--secondaryGreen);
+  padding: 0.8rem;
+  margin:0.2rem;
+}
+.buttonSuccessPrimary:hover{
+  border: var(--secondaryGreen) 0.5rem solid;
+}

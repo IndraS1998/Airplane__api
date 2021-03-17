@@ -1,25 +1,23 @@
 import React,{useContext,useState} from "react";
-
 import {flightContext} from "../../store/reducer";
 import "./modal.css";
 import {deleteFlightHandler,onEditPrice} from "../../store/core/CRUD";
-import {FaLocationArrow} from "react-icons/fa";
-import {TiTick} from "react-icons/ti";
-import {ImCancelCircle} from "react-icons/im";
-import {onSetString} from "../../store/core/authentication";
+import ErrorModal from "./modalComponents/ErrorModal";
+import DeleteModal from "./modalComponents/DeleteModal";
+import DetailModal from "./modalComponents/DetailModal";
+import ChangePassWordModal from "./modalComponents/ChangePassWordModal";
+
 
 const Modal = () =>{
-    const {modalTrigger,setLoading,setFlightSpaces,modalOpen,
-        flightsSpaces,setModalOpen,message,modalFlight,setModalTrigger} = useContext(flightContext);
+    const {modalTrigger,setLoading,modalOpen,activeWorker,getFlights,setModalOpen,message,modalFlight,setModalTrigger,setMessage} = useContext(flightContext);
+    let errorObj = {setMessage,setModalOpen,setModalTrigger};
 
-    const [deleted,setDeleted] = useState(false);
     const [price,setPrice] = useState("");
 
-    function onDelete(){
+    async function onDelete(){
         setLoading(true);
-        const data = deleteFlightHandler(modalFlight.id,flightsSpaces);
-        setFlightSpaces(data);
-        setDeleted(true);
+        await deleteFlightHandler(modalFlight.id,setLoading,errorObj);
+        await getFlights();
         setLoading(false);
     }
 
@@ -28,89 +26,29 @@ const Modal = () =>{
     }
 
     if(modalTrigger === "error"){
-        return(
-            <div className="modal column">
-                <div className="textSection column">
-                    <p className="modalText">{message}</p>
-                    <p className="btnInnerEmpty" onClick={()=> {
-                        setModalOpen(false);
-                    }}>
-                        Close
-                    </p>
-                </div>
-            </div>
-        )
+        return<ErrorModal setModalOpen={setModalOpen} message={message} setModalTrigger={setModalTrigger}/>
     }
+
     if(modalTrigger === "delete"){
         return(
-            <div className="modal center">
-                <div className="deleteSection column">
-                    <p className="deleteText">are you sure you want to delete this flight ticket?</p>
-                    <p className="deleteTitleModal ">{modalFlight.planeName}</p>
-                    <div className="center">
-                        <p className="deleteTextInfo">seat number</p>
-                        <p className="deleteText">{modalFlight.seatNumber}</p>
-                    </div>
-                    <div className="center">
-                        {!deleted && <p className="btnDanger" onClick={onDelete}>DELETE</p>}
-                        <p className="darkBtnEmpty" onClick={()=>{
-                            setModalOpen(false);
-                            setDeleted(false);
-                            setModalTrigger(null);
-                        }}>CLOSE</p>
-                    </div>
-                    <p className="deleteTextInfo">{deleted && "successfully deleted"}</p>
-                </div>
-            </div>
+            <DeleteModal setModalOpen={setModalOpen} setModalTrigger={setModalTrigger}
+                onDelete={onDelete} modalFlight={modalFlight}
+            />
         )
     }
+
+    if(modalTrigger === "setPassword"){
+        return(
+            <ChangePassWordModal setModalOpen={setModalOpen} setModalTrigger={setModalTrigger} setLoading={setLoading} errorObj={errorObj}
+                                 name={activeWorker.name}
+            />
+        )
+    }
+
     return(
-        <div className="modal center">
-            <div className="detailModal column">
-                <p className="titleMain">{modalFlight.planeName}</p>
-                <div className="center">
-                    <div className="column ">
-                        <p className="dateEmphasis">departure</p>
-                        <p className="date">{modalFlight.airport}</p>
-                        <p className="date">{modalFlight.departureTime}</p>
-                    </div>
-                    <div>
-                        <p className="dateEmphasis"><FaLocationArrow size={32}/></p>
-                    </div>
-                    <div className="column">
-                        <p className="dateEmphasis">arrival</p>
-                        <p className="date">{modalFlight.destination}</p>
-                        <p className="date">{modalFlight.arrivalTime}</p>
-                    </div>
-                </div>
-                <div className="center">
-                    <p className="dateEmphasis">category</p>
-                    <p className="date">{modalFlight.category}</p>
-                </div>
-                <div className="center">
-                    <p className="dateEmphasis">booked?</p>
-                    <p className="date">{modalFlight.Booked}</p>
-                    {modalFlight.Booked ?
-                        <p className="dateEmphasis"><TiTick size={25}/></p> :
-                        <p className="dateEmphasisRed"><ImCancelCircle size={25}/></p>}
-                </div>
-                <div className="center">
-                    <p className="dateEmphasis">price : {modalFlight.price}</p>
-                    <input type="text" value={price} placeholder="price" onChange={event => onSetString(event,setPrice)}/>
-                    <p className="btnMain" onClick={()=>{
-                        if(price.length < 1){
-                            return
-                        }
-                        setLoading(true);
-                        onEditPrice(modalFlight,price);
-                        setLoading(false);
-                    }}>
-                        Edit
-                    </p>
-                </div>
-                <p className="btnInnerEmpty" onClick={()=>setModalOpen(false)}>CLOSE</p>
-            </div>
-        </div>
+        <DetailModal modalFlight={modalFlight} setPrice={setPrice} errorObj={errorObj} getFlights={getFlights}
+                     setModalOpen={setModalOpen} price={price} setLoading={setLoading}
+        />
     )
 };
 

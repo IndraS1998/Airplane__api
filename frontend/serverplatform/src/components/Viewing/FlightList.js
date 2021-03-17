@@ -1,38 +1,46 @@
-import React,{useContext,useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 
 import CheckLogin from "../home/CheckLogin";
-import SearchBar from "./SearchBar";
+import Footer from "../navigation/Footer";
 import FlightContainer from "./FlightContainer";
 import FlightHeader from "./FlightHeader";
 import {flightContext} from "../../store/reducer";
+import {fetchingFlightHandler} from "../../store/core/CRUD";
 import "./flights.css";
 
 const FlightList = () =>{
-    const {logged,flightsSpaces,setFlightSpaces,setLoading} = useContext(flightContext);
+    const {logged,flightsSpaces,setLoading,setMessage,setModalOpen,setModalTrigger} = useContext(flightContext);
     const [searchNum,setSearchNum] = useState(10);
-    const blockedFlights = flightsSpaces;
+    const [actualFLights,setActualFlights] = useState(flightsSpaces);
+    let blockedFlights = flightsSpaces;
 
-    /*      $$$     will be added when fetching is done from the backend       $$$
-    useEffect(()=>{});
-    blocked flights will be set here
-    */
+    const modalObj = {errorStringSetter : setMessage,setModalState : setModalOpen,setModalTrigger};
+
+    /*      $$$     will be added when fetching is done from the backend       $$$      */
+    useEffect(()=>{
+        async function onFetchFlights(){
+            let data = await fetchingFlightHandler(modalObj);
+            setActualFlights(data);
+            blockedFlights = actualFLights;
+        }
+        onFetchFlights().then(r => console.log('ok'));
+    },[flightsSpaces]);
     //editing the number of flights which can be viewed
-    const viewFlights = flightsSpaces.slice(0 , searchNum);
+    const viewFlights = actualFLights.slice(0 , searchNum);
 
     if(!logged){
         return <CheckLogin/>
     }
     return (
-        <section className="height100 center">
-            <div className="searchBarSection">
-                <SearchBar setFlights={setFlightSpaces} setLoading={setLoading} blockedFlights={blockedFlights}/>
-            </div>
-            <div className="column viewSection" >
-                <FlightHeader setFlights={setFlightSpaces} blockedFlights={blockedFlights}
-                              setLoading={setLoading} setSearchNum={setSearchNum}/>
+        <div>
+            <section className="height100 column viewSection">
+                <FlightHeader setFlights={setActualFlights} blockedFlights={blockedFlights}
+                              setLoading={setLoading} setSearchNum={setSearchNum}
+                />
                 <FlightContainer flights={viewFlights} />
-            </div>
-        </section>
+            </section>
+            <Footer/>
+        </div>
     )
 };
 

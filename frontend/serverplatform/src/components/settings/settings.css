@@ -1,0 +1,28 @@
+.secondaryTitle{
+    color: var(--secondaryGreen);
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    padding:0 1rem;
+    flex: 2;
+}
+.secondaryInfo{
+    color: var(--secondaryGrey);
+    flex: 1;
+    text-transform: capitalize;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid 0.2rem var(--sucessGrey);
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem;
+    border-radius: 7px;
+}
+.info:hover{
+    border:solid 0.2rem var(--secondaryGreen);
+}
+.txtXS{
+    color: var(--mainGreen);
+    font-size: 0.6rem;
+}

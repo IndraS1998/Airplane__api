@@ -65,7 +65,8 @@
 .modalText{
     color: var(--darkGreen);
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    padding:0 1rem;
 }
 .deleteTitleModal{
     color: var(--darkRed);
@@ -83,6 +84,12 @@
 }
 .deleteTextInfo{
     color: var(--secondaryRed);
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.successInfo{
+    color: var(--mainGreen);
     text-transform: capitalize;
     font-size: 0.8rem;
     text-align: center;

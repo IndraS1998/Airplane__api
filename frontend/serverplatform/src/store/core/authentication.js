@@ -1,32 +1,38 @@
+import {openErrorModal} from "./Utility";
+
 /*
 *       $$$         LOGIN IN METHOD            $$$
 * */
 
-const onLogin = (name,password,list,loader) =>{
+const onLogin = async (name,password,loader,errObj) =>{
 //this method received a name, a password and a list such that it can verify user credentials
-//it returns a boolean
-
-//find if user exits
+//it returns a boolean and the logged in user
     loader(true);
-    const user  = list.find(user => user.name === name);
-   /* try{
-        user = ;
+    const {setMessage,setModalOpen,setModalTrigger} = errObj;
+    try{
+        let res = await fetch("http://localhost:5000/worker/login",{
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify({
+                name : name,
+                password : password
+            })
+        });
+        if(!res.ok){
+            loader(false);
+            openErrorModal("wrong credentials",setMessage,setModalOpen,setModalTrigger);
+            return {log : false, user : null};
+        }
+        let digest = await res.json();
+        loader(false);
+        return {log : true, user : digest.user}
     }catch (e) {
-        loader(false);
-        return false;
-    }*/
-    if(!user){
-        loader(false);
-        alert("wrong credentials");
-        return {log : false, user : null};
-    }
-    if(user.password !== password){
-        loader(false);
-        alert("wrong credentials");
-        return {log : false, user : null};
-    }
-    loader(false);
-    return {log : true, user}
+       loader(false);
+       openErrorModal("something is not ok",setMessage,setModalOpen,setModalTrigger);
+       return {log : false, user : null};
+   }
 };
 
 const onSetString = (e,setString) =>{

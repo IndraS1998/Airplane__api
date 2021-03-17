@@ -6,6 +6,7 @@ const users = [
         sex : "male",
         department : "IT",
         password : "health",
+        passwordReset:false,
         phoneNumber : "665665665",
         address : "nsimeyong"
     },
@@ -15,7 +16,8 @@ const users = [
         email : "ndokongbasilejnr@yahoo.com",
         sex : "male",
         department : "HR",
-        password : "power",
+        password : "powerful",
+        passwordReset: true,
         phoneNumber : "665665665",
         address : "nsimeyong"
     }

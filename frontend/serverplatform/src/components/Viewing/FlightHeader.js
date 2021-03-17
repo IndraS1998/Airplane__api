@@ -1,5 +1,6 @@
 import React from "react";
 import "./flights.css";
+import SearchBar from "./SearchBar";
 import {FiRefreshCcw} from "react-icons/fi";
 import {onSetString} from "../../store/core/authentication";
 
@@ -25,6 +26,7 @@ const FlightHeader = ({setFlights,blockedFlights,setLoading,setSearchNum}) =>{
             <p className="textInfo">plane</p>
             <p className="textInfo">departure</p>
             <p className="textInfo">arrival</p>
+            <SearchBar setFlights={setFlights} blockedFlights={blockedFlights}/>
             <span className="editBtn" onClick={onRefreshFlights}><FiRefreshCcw/></span>
         </div>
     )

@@ -5,6 +5,7 @@ let workerSchema = new Schema({
     name:{type:String,required:true},
     email:{type:String,required: true},
     sex:{type:String,required:true},
+    passwordEdit : {type:Boolean,required :true},
     department:{type:String,required:true},
     password:{type:String,required:true},
     phone_Number : {type:Number,required:true},

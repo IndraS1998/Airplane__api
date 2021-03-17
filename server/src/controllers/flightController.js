@@ -12,29 +12,33 @@ let create = async (req,res,next) =>{
         return next(new HttpError('invalid user input',401));
     }
     //create new flight
-    let {departure,arrival,price,category,air_flight,air_flight_num,airport,c_name,c_id,ctd_date} = req.body;
+    let {departure,arrival,price,category,air_flight,airport,destination,air_flight_number,c_name,c_id} = req.body;
+
+    let date = new Date();
     let newFlight = new Flight({
         departure,
         arrival,
+        destination,
         price,
         category,
         booked : false,
         air_flight,
-        air_flight_num,
+        air_flight_number,  //the seat number
         airport,
         c_name,
         c_id,
-        ctd_date,
+        ctd_date : date.toLocaleString(),
     });
     try{
        await newFlight.save();
     }catch (e) {
+        console.log(e);
         return next(new HttpError('system error please try again later',401));
     }
-    await res.status(200).json({newFlight:newFlight.toObject({getters:true})});
+    await res.status(200).json({message : "ok"});
 };
 
-//  %%  updating a flight space %%
+//  %%  updating a flight space for booked %%
 let updateFlightSpace = async(req,res,next) =>{
     //get the id from the body
     let {flightId} = req.body;
@@ -58,23 +62,51 @@ let updateFlightSpace = async(req,res,next) =>{
     await res.status(200).json({foundFLight:foundFLight.toObject({getters:true})})
 };
 
+//  %%  updating the price%%
+
+let updateFlightPrice = async (req,res,next) =>{
+    if(!validationResult(req).isEmpty()){
+        return next(new HttpError('invalid user input',401));
+    }
+    let {flightId,newPrice} = req.body;
+
+    let foundFlight;
+    try{
+        foundFlight = await Flight.findById(flightId).exec();
+    }catch (e) {
+        return next(new HttpError('system error please try again later',401));
+    }
+    if(!foundFlight){
+        return next(new HttpError('such a flight does not exist',401));
+    }
+    foundFlight.price = newPrice;
+    try{
+        await foundFlight.save();
+    }catch (e) {
+        return next(new HttpError('system error please try again later',401));
+    }
+    await res.status(200).json({foundFlight:foundFlight.toObject({getters:true})})
+};
+
 //  %%  deleting a flight space %%
 let deleteFlightSpace = async (req,res,next) =>{
     //get the id from the body
     let {flightId} = req.body;
-    //find if the flight exists
-    let foundFLight;
+    console.log("got here at least");
+
+    let foundFlight;
     try{
-        foundFLight = await Flight.findById(flightId).exec();
+        foundFlight = await Flight.findById(flightId).exec();
+        console.log("found the dam flight at least");
     }catch (e) {
         return next(new HttpError('system error please try again later',401));
     }
-    if(!foundFLight){
+    if(!foundFlight){
         return next(new HttpError('such a flight does not exist',401));
     }
     //deleting the flight
     try{
-        await foundFLight.remove();
+        await foundFlight.remove();
     }catch (e) {
         return next(new HttpError('system error please try again later',401));
     }
@@ -106,4 +138,5 @@ let getAvailableFLights = async (req,res,next) =>{};
 exports.createFlightSpace = create;
 exports.deleteFlightSpace = deleteFlightSpace;
 exports.updateFlightSpace = updateFlightSpace;
+exports.updateFlightPrice = updateFlightPrice;
 exports.getAllFlights = getAllFlights;

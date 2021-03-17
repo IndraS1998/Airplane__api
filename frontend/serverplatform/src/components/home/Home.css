@@ -3,9 +3,12 @@
     height: max-content;
 }
 
+
 .titleText{
     color: var(--secondaryGrey);
     font-size: 2.5rem;
+    padding: 2.5rem;
+    text-transform: capitalize;
 }
 
 span{

@@ -8,7 +8,7 @@ import {openItem} from "../../store/core/Utility";
 
 
 const Flight = ({values}) =>{
-    const {planeName,departureTime,arrivalTime,Booked,id} = values;
+    const {air_flight,departure,arrival,booked} = values;
     const {setModalOpen,setModalTrigger,setModalFlight} = useContext(flightContext);
 
     return(
@@ -19,10 +19,10 @@ const Flight = ({values}) =>{
             <span className="deleteBtn" onClick={()=>openItem(setModalOpen,setModalTrigger,setModalFlight,values,true)}>
                 <RiDeleteBin5Fill/>
             </span>
-            <p className="flightText">{planeName}</p>
-            <p className="secondaryFlightText">{departureTime}</p>
-            <p className="secondaryFlightText">{arrivalTime}</p>
-            {Booked  &&  <p className="flightText"><TiTickOutline/></p>}
+            <p className="flightText">{air_flight}</p>
+            <p className="secondaryFlightText">{departure}</p>
+            <p className="secondaryFlightText">{arrival}</p>
+            {booked  &&  <p className="flightText"><TiTickOutline/></p>}
         </div>
     )
 };

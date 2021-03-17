@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import {filterFlight} from "../../store/core/CRUD";
 import {onSetString} from "../../store/core/authentication";
 
-const SearchBar = ({setFlights,setLoading,blockedFlights}) =>{
+const SearchBar = ({setFlights,blockedFlights}) =>{
     const [departureDate,setDepartureDate] = useState(null);
     const [arrivalDate,setArrivalDate] = useState(null);
     const [searchString,setSearchString] = useState("");
@@ -41,23 +41,30 @@ const SearchBar = ({setFlights,setLoading,blockedFlights}) =>{
             searchBy = "Both";
             criteriaObj = {
                 departure : departureDate.toLocaleString(),
-                arrival : arrivalDate.toLocaleString(),searchString
+                arrival : arrivalDate.toLocaleString(),
+                searchString
             }
         }
-        const data = filterFlight(blockedFlights,criteriaObj,searchBy,setLoading);
+        const data = filterFlight(blockedFlights,criteriaObj,searchBy);
         setFlights(data);
     };
 
     return(
         <div className="column">
-            <p className="searchBarTitle">Search section</p>
-            <input className="searchBar" type="text" onChange={event => onSetString(event,setSearchString)}
-                   placeholder="plane number,category, seat number etc" value={searchString}/>
-            <label >Departure:</label>
+            {/*<p className="searchBarTitle">Search section</p>*/}
+            <input className="searchBar" type="text" onChange={event => {
+                onSetString(event,setSearchString);
+                onFilterFlight();
+            }}
+                   placeholder="search" value={searchString}/>
+            {/*
+              <!-- <label >Departure:</label>
             <DatePicker showTimeSelect  dateFormat="Pp" selected={departureDate} onChange={date => setDepartureDate(date)}/>
             <label >Arrival:</label>
             <DatePicker  showTimeSelect dateFormat="Pp" selected={arrivalDate} onChange={date => setArrivalDate(date)}/>
             <p className="btnInnerEmpty" onClick={onFilterFlight}>Search</p>
+           -->
+            */}
         </div>
     )
 };

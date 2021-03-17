@@ -1,4 +1,9 @@
-  :root{
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+:root{
       --mainGreen : #00BFA0;
       --secondaryGreen : #00e3c4;
       --darkGreen : #00b08e;
@@ -39,6 +44,10 @@
       text-align: center;
   }
 
+.bodyBlack{
+        background-color: var(--secondaryGrey);
+    }
+
   .column{
       display: flex;
       justify-content: center;
@@ -53,7 +62,7 @@
   }
 
   .height100{
-      min-height: 85vh;
+      min-height: 80vh;
   }
 
   .textSmall{
@@ -137,10 +146,8 @@
       border-width: 0.2rem;
       border-radius: 7px;
   }
-
-  input:focus{
-      border-color: var(--secondaryGrey);
-      border-width: 0.2rem;
+  input:hover{
+      cursor: text;
   }
 
   .animate {

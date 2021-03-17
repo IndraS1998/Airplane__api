@@ -3,25 +3,29 @@ let {check} = require("express-validator");
 let router = express.Router();
 
 let flightController = require("../controllers/flightController");
-let {createFlightSpace,deleteFlightSpace,updateFlightSpace,getAllFlights} = flightController;
+let {createFlightSpace,deleteFlightSpace,updateFlightSpace,updateFlightPrice,getAllFlights} = flightController;
 
-router.post("/new-flight",[
-    check('departure').isDate().notEmpty(),
-    check('arrival').isDate().notEmpty(),
+router.post("/create",[
+    check('departure').isString().notEmpty(),
+    check('arrival').isString().notEmpty(),
     check('price').isNumeric().notEmpty(),
     check('category').notEmpty().isString(),
-    check('booked').notEmpty().isBoolean(),
-    check('air-flight').notEmpty().isString(),
+    check('air_flight').notEmpty().isString(),
     check('airport').notEmpty().isString(),
-    check('air-flight_number').notEmpty().isNumeric(),
+    check('destination').isString().notEmpty(),
+    check('air_flight_number').notEmpty().isString(),
     check('c_name').notEmpty().isString(),
     check('c_id').notEmpty().isString(),
-    check('ctd_date').notEmpty().isDate()
 ],createFlightSpace);
 
-router.delete("/del-flight",deleteFlightSpace);
+router.delete("/delete",deleteFlightSpace);
 
-router.patch("/update-flight",updateFlightSpace);
+router.patch("/update",updateFlightSpace);  //to be exploited by client end
+
+router.patch("/updatePrice",[
+    check('newPrice').isNumeric().notEmpty(),
+    check('flightId').isString().notEmpty()
+],updateFlightPrice);
 
 router.get("/",getAllFlights);
 
