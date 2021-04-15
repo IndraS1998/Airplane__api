@@ -25,7 +25,7 @@ span{
 }
 
 .cart{
-    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    box-shadow: 2px 2px 4px 2px var(--secondaryGrey);
     min-height: 15rem;
     width: 16rem;
     text-align: center;
@@ -43,7 +43,7 @@ span{
     font-size: 1.2rem;
 }
 .cartSetting{
-    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    box-shadow: 2px 2px 4px 3px var(--secondaryGrey);
     min-height: 15rem;
     width: 16rem;
     text-align: center;
@@ -52,7 +52,7 @@ span{
 }
 
 .cartSetting:hover{
-    background-color: var(--lightRed);
+    background-color: var(--mainRed);
     cursor: pointer;
     transition:all 1s linear;
     color: white;
@@ -63,7 +63,7 @@ span{
 }
 
 .cartOut{
-    box-shadow: 2px 2px 8px 5px var(--secondaryGrey);
+    box-shadow: 2px 2px 4px 3px var(--secondaryGrey);
     min-height: 15rem;
     min-width: 15rem;
     border-radius: 10px;

@@ -7,6 +7,8 @@ let flightRoute = require("./src/routes/flightRoute");
 let adminRoute = require("./src/routes/adminRoute");
 let workerRoute = require("./src/routes/workerRoute");
 let operationRoute = require("./src/routes/OperationRoutes");
+let userRoute = require("./src/routes/UserRoutes");
+let messageRoute = require("./src/routes/messageRoutes");
 
 let app = express();
 app.use(bodyParser.json());
@@ -29,6 +31,8 @@ app.use("/flights",flightRoute);
 app.use("/admin",adminRoute);
 app.use("/worker",workerRoute);
 app.use("/operations",operationRoute);
+app.use("/user",userRoute);
+app.use("/message",messageRoute);
 
 /*
 *            %%%   ERROR HANDLING   %%%

@@ -15,7 +15,7 @@ let authenticate = async (req,res,next) =>{
     let {name,password} = req.body;
     let found;
     try{
-        found = Admin.findOne({name});
+        found = await Admin.findOne({name}).exec();
     }catch (e) {
         return next(new HttpError('system error please try again later',401));
     }
@@ -82,7 +82,6 @@ let createAdmin = async (req,res,next) =>{
     }catch (e) {
         return next(new HttpError('system error something went wrong',401));
     }
-    console.log('done');
     await res.json({message : 'success'}).status(200);
 };
 

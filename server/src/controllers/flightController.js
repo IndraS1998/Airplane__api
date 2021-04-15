@@ -27,6 +27,7 @@ let create = async (req,res,next) =>{
         airport,
         c_name,
         c_id,
+        owner_id:"",
         ctd_date : date.toLocaleString(),
     });
     try{
@@ -92,12 +93,10 @@ let updateFlightPrice = async (req,res,next) =>{
 let deleteFlightSpace = async (req,res,next) =>{
     //get the id from the body
     let {flightId} = req.body;
-    console.log("got here at least");
 
     let foundFlight;
     try{
         foundFlight = await Flight.findById(flightId).exec();
-        console.log("found the dam flight at least");
     }catch (e) {
         return next(new HttpError('system error please try again later',401));
     }

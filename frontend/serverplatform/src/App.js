@@ -13,7 +13,7 @@ import Modal from "./components/loading/Modal";
 
 function App(){
   return(
-      <div className="transition">
+      <div>
           <Navigation />
           <Switch>
               <Route exact path="/" component={Home}/>

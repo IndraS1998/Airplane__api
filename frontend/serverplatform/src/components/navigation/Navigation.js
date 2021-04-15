@@ -2,7 +2,6 @@ import React,{useContext} from "react";
 import {Link} from "react-router-dom";
 import {flightContext} from "../../store/reducer";
 import "./Navigation.css"
-import {CgLogIn} from "react-icons/cg";
 import {IoIosLogOut} from "react-icons/io";
 
 const Navigation = () =>{

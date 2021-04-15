@@ -1,0 +1,94 @@
+.authentication-section{
+    min-height: 88vh;
+    width: 100%;
+}
+.mainSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.auth-card{
+    height: 30rem;
+    width: 25rem;
+    border: var(--secondaryGreen) 0.15rem solid;
+    border-radius: 5px;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+.auth-card-title{
+    font-size: 1.3rem;
+    color: var(--sucessGrey);
+    font-weight: bold;
+}
+.auth-card-small{
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: var(--mainGreen);
+}
+.auth-card-small:hover{
+    cursor: pointer;
+}
+/*the info section*/
+.info-title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondaryGreen);
+}
+.info-text{
+    font-size: 1.1rem;
+    margin: 2rem;
+    padding: 2rem;
+    color: var(--secondaryGrey);
+    max-width: 35rem;
+}
+/*      MEDIA QUERY*/
+@media only screen and (max-width: 500px) {
+    /*the info section*/
+    section.mainSection{
+        margin: 0.6rem 0.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h4.info-title{
+        font-size: 1rem;
+    }
+    p.info-text{
+        font-size: 0.8rem;
+        margin: 1rem;
+        padding: 1rem;
+        color: var(--secondaryGrey);
+        width: 19rem;
+    }
+    /*      card        */
+    .authentication-section{
+        min-height: 68vh;
+        width: 100%;
+    }
+    .auth-card{
+        height: 23rem;
+        width: 19rem;
+    }
+    .auth-card-title{
+        font-size: 1.3rem;
+        color: var(--sucessGrey);
+        font-weight: bold;
+    }
+    .auth-card-small{
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        color: var(--mainGreen);
+    }
+    .auth-card-small:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+

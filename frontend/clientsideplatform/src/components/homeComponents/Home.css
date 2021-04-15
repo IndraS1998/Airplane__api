@@ -1,0 +1,140 @@
+.main{
+    min-height: 88vh;
+    min-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.main-text-area{
+    height: 20rem;
+}
+
+.main-title{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--secondaryGrey);
+}
+
+.main-text{
+    color: var(--secondaryGrey);
+    font-size: 1rem;
+}
+
+.image-container{
+    height: 75vh;
+    width: 92%;
+    margin-bottom: 3rem;
+}
+.image{
+    object-fit: cover;
+    height: 99%;
+    width: 99%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.img-long{
+    object-fit: cover;
+    width: 99%;
+    height: 99%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.blue{
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+.row-2{
+    height: 100%;
+    width: 50%;
+    padding: 1px;
+}
+.red{
+    width: 100%;
+    height: 50%;
+}
+.green{
+    width: 100%;
+    height: 50%;
+}
+/*TEXT AREA*/
+.info{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #ededed;
+    height: 15rem;
+    width: 25rem;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.info-title{
+    color: var(--mainBlue);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.text-info{
+    font-size: 1rem;
+    color: var(--mainDark);
+}
+
+
+/*      MEDIA QUERIES   */
+@media (max-width: 500px) {
+    section.main{
+        padding: 0.1rem 0.7rem;
+    }
+
+    div.main-text-area{
+        height: 15rem;
+    }
+
+    h2.main-title{
+        font-size: 1rem;
+    }
+
+    p.main-text{
+        font-size: 0.8rem;
+    }
+
+    div.row-2{
+        display: none;
+    }
+
+    div.image-container{
+        height: 65vh;
+        width: 100%;
+    }
+
+    div.blue{
+        width: 100%;
+    }
+
+    img.img-long{
+        object-fit: cover;
+        width: 100%;
+        height: 99%;
+        border-radius: 5px;
+    }
+
+    section.info{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: #ededed;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+    h4.info-title{
+        color: var(--mainGreen);
+        font-size: 1rem;
+    }
+
+    p.text-info{
+        font-size: 0.8rem;
+        color: var(--mainDark);
+    }
+}

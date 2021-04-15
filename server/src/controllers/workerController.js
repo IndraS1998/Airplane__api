@@ -99,7 +99,7 @@ let editPassWord = async (req,res,next) =>{
     //find the user with the password
     let found;
     try{
-        found = await Worker.findOne({name});
+        found = await Worker.findOne({name}).exec();
     }catch (e) {
         return next(new HttpError('system error please try again later',401));
     }

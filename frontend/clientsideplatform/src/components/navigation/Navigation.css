@@ -1,0 +1,99 @@
+.navigationSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: var(--secondaryGreen) solid 0.1rem ;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.navigationButton{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    cursor: pointer;
+}
+.navigationButtonContent{
+    border-bottom: var(--secondaryGreen) solid 0.2rem ;
+}
+
+.navigationHeader{
+    font-size: 1.2rem !important;
+    text-align: center;
+    margin: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--mainWhite);
+    color: var(--mainGreen);
+    text-transform: uppercase;
+}
+.navigationLogOut{
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: var(--mainWhite);
+    color: var(--mainRed);
+    text-transform: uppercase;
+    text-align: center;
+}
+.navigationLogOut:hover{
+    color: var(--darkRed);
+    transition: all 1s linear;
+}
+.navigationItem{
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: var(--mainWhite);
+    color: var(--mainGreen);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+}
+.navigationItem:hover{
+    color: var(--secondaryGrey);
+    transition: all 1s linear;
+    border-bottom: var(--secondaryGreen) 1px solid;
+}
+.sing-in{
+    border: 1px var(--secondaryGreen) solid;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: var(--mainWhite);
+    color: var(--mainGreen);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+}
+.sing-in:hover{
+    color: var(--mainGreen);
+}
+
+/*ICONS*/
+.icon{
+    color: var(--secondaryGreen);
+}
+.icon:hover{
+    cursor: pointer;
+}
+
+/*  MEDIA QUERIES   */
+@media (max-width: 500px) {
+    section.navigationSection{
+        display: none;
+    }
+    /*navigationButton{
+        position: fixed;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        display: flex;
+        background: var(--mainGreen);
+    }
+     */
+}

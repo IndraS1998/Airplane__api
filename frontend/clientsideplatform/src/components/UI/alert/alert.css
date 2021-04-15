@@ -1,0 +1,71 @@
+/*message alert*/
+.alert-body{
+    background: var(--secondaryGrey);
+    height: 100%;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.message-body{
+    padding: 0 3rem;
+    margin:4rem 0 0 0;
+    min-width: 20rem;
+    min-height: 30rem;
+    border-radius: 7px;
+    background: var(--secondaryGrey);
+    color: white;
+}
+
+.the-icon{
+    color: gold;
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+/*detail alert*/
+
+.detail-alert-body{
+    padding: 0 3rem;
+    margin:4rem 0 0 0;
+    min-width: 30rem;
+    min-height: 30rem;
+    border-radius: 7px;
+    background: var(--secondaryGrey);
+    color: white;
+}
+
+.detail-title{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+.detail-sub{
+    font-size: 1.1rem;
+}
+
+.detail-image{
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.text-little{
+    size: 0.8rem;
+    color: var(--secondaryGreen);
+}
+
+.heart-icon{
+    color: var(--mainGrey);
+}
+.heart-icon:hover{
+    cursor: pointer;
+}
+
+.heart-icon2{
+    color: var(--secondaryRed);
+}
+.heart-icon2:hover{
+    cursor: pointer;
+}

@@ -32,7 +32,7 @@ const FlightReducer = ({children}) =>{
     };
 
     useEffect(()=>{
-        getFlights().then(r => console.log("done"));
+        getFlights().then(r => console.log("ok"));
     },[]);
 
 

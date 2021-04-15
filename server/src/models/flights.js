@@ -13,6 +13,7 @@ let flightSchema = new Schema({
     airport:{type:String,required:true},
     c_name:{type:String,required:true}, // creator
     c_id:{type:String,required:true},
+    owner_id:{type:String},
     ctd_date:{type:String,required:true}  //created date
 });
 

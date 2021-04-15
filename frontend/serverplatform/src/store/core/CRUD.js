@@ -135,7 +135,7 @@ async function deleteFlightHandler(id,onload,errorObj) {
             return false;
         }
         onload(false);
-        openErrorModal("did them deletion",setMessage,setModalOpen,setModalTrigger);
+        openErrorModal("successfully deleted the flight",setMessage,setModalOpen,setModalTrigger);
         return false;
     }catch (e) {
         onload(false);

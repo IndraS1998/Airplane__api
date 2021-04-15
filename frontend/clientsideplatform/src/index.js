@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {BrowserRouter as Router} from "react-router-dom";
 import App from './App';
+import {FlightReducer} from "./reducer/reducer";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
-          <App />
-      </Router>
+      <FlightReducer>
+          <Router>
+              <App />
+          </Router>
+      </FlightReducer>
   </React.StrictMode>,
   document.getElementById('root')
 );

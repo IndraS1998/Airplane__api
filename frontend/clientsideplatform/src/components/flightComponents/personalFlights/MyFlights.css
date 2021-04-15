@@ -1,0 +1,76 @@
+.flight-section{
+    min-height: 88vh;
+    color: var(--secondaryGrey);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+/*MAIN SECTION*/
+.main-section{
+    margin: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+/*    ASIDE SECTION  */
+.aside-section{
+    min-height: 13rem;
+    max-width: 20rem;
+    border-radius: 7px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: var(--secondaryGrey) 0.1rem solid;
+}
+
+.border-bottom-grey{
+    border-top: var(--secondaryGrey) solid 1px ;
+}
+
+.aside-section-header{
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--secondaryGreen);
+}
+/*SINGLE PERSONAL FLIGHTS*/
+.single-flight{
+    min-height: 10rem;
+    min-width: 22rem;
+    border-radius: 5px;
+    border: var(--secondaryGrey) solid 1px;
+    margin: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.single-flight-header{
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--secondaryGreen);
+}
+
+.single-flight-head-section{
+    background: var(--mainGrey);
+    padding: 1rem;
+}
+@media (max-width: 500px){
+    .flight-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;flex-direction: column;
+    }
+    .main-section{
+        margin: 1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    .single-flight{
+        min-width: 15rem;
+    }
+    .aside-section{
+        max-width: 15rem;
+    }
+}

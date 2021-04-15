@@ -1,0 +1,141 @@
+.main-section{
+    min-height: 88vh;
+
+}
+
+/* pertaining to the SingleFlight Component*/
+.cart{
+    min-height: 15rem;
+    min-width: 17rem;
+    background: var(--mainGrey);
+    border-radius: 5px;
+    padding: 0;
+    margin: 1rem;
+    position: relative;
+    box-shadow: 0.5px 0.5px 2px 1px var(--secondaryGrey);
+}
+.cart-img-container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 12rem;
+}
+.cart:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 2px var(--secondaryGrey);
+    transition:all 0.1s linear;
+}
+.cart-title{
+    color:var(--mainGreen);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.cart-img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-top: 5px;
+}
+.cart-info{
+    color: var(--secondaryGrey);
+    font-size: 1rem;
+}
+.cart-sub{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+}
+
+/*pertaining to the global flights*/
+.flightContainer{
+    flex-wrap: wrap;
+}
+
+/*sort bar components*/
+.sort-card{
+    height: 18rem;
+    width: 35rem;
+    box-shadow: 0.5px 0.5px 2px 1px var(--secondaryGrey);
+    padding: 2rem;
+}
+.sort-cart-title{
+    size: 2rem;
+    color: var(--mainGreen);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.sort-input{
+    min-height: 2rem;
+    min-width: 3rem;
+    background: white;
+    border-left: white solid 0.1rem;
+    border-right: white solid 0.1rem;
+    border-top: white solid 0.1rem;
+    border-bottom: var(--secondaryGreen) solid 0.1rem;
+}
+.sort-input:focus{
+    outline-width: 0;
+}
+.sort-input:hover{
+    border-bottom: var(--secondaryGreen) solid 0.15rem;
+}
+/*DROPDOWN SECTION*/
+
+.box{
+    margin: 1rem;
+}
+
+.box select {
+    background-color: var(--mainGreen);
+    color: white;
+    padding: 0.5rem;
+    width: 3rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    outline: none;
+    cursor: pointer;
+}
+
+.box-text{
+    font-size: 0.8rem;
+    color: var(--mainBlue);
+}
+
+.section-80{
+    height: 80vh;
+    color: var(--secondaryGrey);
+}
+
+/*      MEDIA QUERIES*/
+@media only screen and (max-width: 500px) {
+    /*sort bar components*/
+    div.sort-card{
+        min-height: 10rem;
+        width: 15rem;
+        padding: 1rem;
+    }
+
+    h3.sort-cart-title{
+        font-size: 1rem;
+    }
+
+    input.sort-input{
+        min-height: 2rem;
+        min-width: 2rem;
+    }
+
+    div.focus{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
